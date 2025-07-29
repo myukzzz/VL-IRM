@@ -49,9 +49,9 @@ Please refer to [tools/cleaned_split_GLIPunseen.ipynb](tools/cleaned_split_GLIPu
 # VL-IRM$ (Swin-T) 
 CUDA_VISIBLE_DEVICES=2 python -m torch.distributed.launch --nproc_per_node=1 --master_port 10038 tools/train_net.py     --task_config configs/vg150/finetune.yaml --config-file configs/pretrain/glip_Swin_T_O365_GoldG.yaml     SOLVER.IMS_PER_BATCH 1 TEST.IMS_PER_BATCH 1     MODEL.DYHEAD.RELATION_REP_REFINER False MODEL.ROI_RELATION_HEAD.PREDICT_USE_BIAS False OUTPUT_DIR OUTPUT/OIV6_lr5e5   SOLVER.CHECKPOINT_PERIOD 5000 MODEL.DYHEAD.SGG_MODE 'sgdet' SOLVER.ov_relation True SOLVER.usetrain True TEST.myeval False OUTPUT_log output_test SOLVER.more_base_rel False
 ```
-## Acknowledgement
-
 
 uploading...
 
+
+## Acknowledgement
 This repo is based on [GLIP](https://github.com/microsoft/GLIP), [Scene-Graph-Benchmark.pytorch](https://github.com/KaihuaTang/Scene-Graph-Benchmark.pytorch), [SGG_from_NLS](https://github.com/YiwuZhong/SGG_from_NLS), [VS3](https://github.com/zyong812/VS3_CVPR23). Thanks for their contribution.
