@@ -45,7 +45,7 @@ Please refer to [tools/cleaned_split_GLIPunseen.ipynb](tools/cleaned_split_GLIPu
 
 1.Open-vocabulary SGG
 
-checkpont:[VG-VS3](https://pan.baidu.com/s/1VsncC-05F13P2fMuUkJtaw?pwd=1234)
+checkpont: [VG-VS3](https://pan.baidu.com/s/1VsncC-05F13P2fMuUkJtaw?pwd=1234)
 ```
 # VL-IRM$ (Swin-T)  
 CUDA_VISIBLE_DEVICES=2 python -m torch.distributed.launch --nproc_per_node=1 --master_port 10038 tools/train_net.py     --task_config configs/vg150/finetune.yaml --config-file configs/pretrain/glip_Swin_T_O365_GoldG.yaml     SOLVER.IMS_PER_BATCH 1 TEST.IMS_PER_BATCH 1     MODEL.DYHEAD.RELATION_REP_REFINER False MODEL.ROI_RELATION_HEAD.PREDICT_USE_BIAS False OUTPUT_DIR OUTPUT/VG_lr1e5   SOLVER.CHECKPOINT_PERIOD 5000 MODEL.DYHEAD.SGG_MODE 'sgdet' SOLVER.ov_relation True SOLVER.usetrain True TEST.myeval False OUTPUT_log output_test SOLVER.more_base_rel True
